@@ -15,8 +15,12 @@ class person:
 		self.atkpwr = plattr.get('atkpwr', 1.0)
 		self.defpwr = plattr.get('defpwr', 1.0)
 		self.healpwr = plattr.get('healpwr', 1.0)
-		self.wearing = []*6
-		self.bag = []
+		self.curatk = plattr.get('curatk', 2)
+		self.curdef = plattr.get('curdef', 1)
+		self.bagsize = plattr.get('bagsize', 20)
+		self.wearing = [None]*6
+		self.bag = [None]*self.bagsize
+
 
 
 
@@ -63,12 +67,13 @@ class wearable:
 		# 3 = Leg Piece
 		# 4 = Boots
 		# 5 = Amulet
-		# These align with the list in the person class.
+		# These align with the "wearing" list in the person class.
+		self.itatk = itattr.get('itatk', 0)
+		self.itdef = itattr.get('itdef', 0)
 		self.hpdiff = itattr.get('hpdiff', 0)
 		self.mpdiff = itattr.get("mpdiff", 0)
 		self.stadiff = itattr.get('stadiff', 0)
 		self.spddiff = itattr.get('spddiff', 0)
-		self.atkpwrdiff = itattr.get('atkpwrdiff', 0)
-		self.defpwrdiff = itattr.get('defpwrdiff', 0)
-		self.healpwrdiff = itattr.get('healpwrdiff', 0)
-
+		self.atkpwrdiff = itattr.get('atkpwrdiff', 1)
+		self.defpwrdiff = itattr.get('defpwrdiff', 1)
+		self.healpwrdiff = itattr.get('healpwrdiff', 1)
