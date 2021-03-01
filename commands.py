@@ -42,11 +42,13 @@ def addToBag(toitem):
 			party[sel].bag[n] = toitem
 			print("Added {0} to bag. Position {1}".format(party[sel].bag[n].name, n))
 			return 0
-			
+	
+	print("No more space in the bag!")
 
 
 
 def remFromBag(bagslct):
+# Removes items from bag
 	party[sel].bag[bagslct] = None
 	bagSort()
 				
@@ -73,6 +75,7 @@ def wearItem(item):
 	elif party[sel].wearing[item.kind] is None:
 		party[sel].wearing[item.kind] = item
 		print("Using {0}".format(party[sel].wearing[item.kind].name))
+		refreshAttr(item.kind)
 		remFromBag(bagslct)
 		return 0
 	else:
@@ -87,6 +90,8 @@ def wearItem(item):
 
 
 def addParty(p):
+# Adds a character to the party, considering there is a free slot
+# TODO: Add character swap logic
 	global party
 	for n in range(len(party)):
 		if party[n] is None:
@@ -99,6 +104,9 @@ def addParty(p):
 
 
 def newGame():
+# This is mostly a test function, I don't expect this to stay here in the future.
+# TODO: Implement an actual "new game" function. Though this is probably need to be
+# done once I get a primitive interface going.
 	global sel
 	global bagslct
 	p1 = person(name = "Hero")
