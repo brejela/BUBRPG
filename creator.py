@@ -5,6 +5,8 @@ class person:
 	def __init__(self, **plattr):
 		self.name = plattr.get('name', "Unknown Ninja")
 		self.prof = plattr.get('prof', "Warrior")
+		self.lvl = plattr.get('lvl', 1)
+		self.exp = plattr.get('exp', 0)
 		self.hp = plattr.get('hp', 20)
 		self.mp = plattr.get('mp', 10)
 		self.sta = plattr.get('sta', 10)
@@ -77,3 +79,17 @@ class wearable:
 		self.atkpwrdiff = itattr.get('atkpwrdiff', 1)
 		self.defpwrdiff = itattr.get('defpwrdiff', 1)
 		self.healpwrdiff = itattr.get('healpwrdiff', 1)
+
+
+class enemy:
+# Enemy class. Everything related to enemies (and thus, PVP events)
+# goes here. Multiple enemies can be in one single fight.
+	def __init__(self, **enattr):
+		self.name = enattr.get('name', "Blob")
+		self.kind = enattr.get('kind', "blob")
+		self.hp = enattr.get('hp', 20)
+		self.element = enattr.get('element', "Normal")
+		self.lvl = enattr.get("lvl", 0)
+		self.enatkpwr = enattr.get('enatkpwr', 1.0)
+		self.endefpwr = entattr.get('endefpwr', 1.0)
+				

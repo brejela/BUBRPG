@@ -1,4 +1,4 @@
-from creator import person, item, wearable
+from creator import *
 
 # Global variables, defines party selection (int sel), party size (list party)
 # and selector (int bagslct)
@@ -77,7 +77,6 @@ def wearItem(item):
 		print("Using {0}".format(party[sel].wearing[item.kind].name))
 		refreshAttr(item.kind)
 		remFromBag(bagslct)
-		return 0
 	else:
 		zeroAttr(item.kind)
 		addToBag(party[sel].wearing[item.kind])
@@ -85,7 +84,6 @@ def wearItem(item):
 		remFromBag(bagslct)
 		refreshAttr(item.kind)
 		print("Using {0}".format(party[sel].wearing[item.kind].name))
-		return 0
 		
 
 
@@ -126,3 +124,4 @@ def newGame():
 	wearItem(party[sel].bag[bagslct])
 	wearItem(party[sel].bag[bagslct])
 	wearItem(party[sel].bag[bagslct])
+
