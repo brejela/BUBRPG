@@ -107,13 +107,13 @@ def newGame():
 # done once I get a primitive interface going.
 	global sel
 	global bagslct
-	p1 = person(name = "Hero")
+	p1 = Person(name = "Hero")
 	addParty(p1)
-	wdswd = wearable(name = "Wooden Sword", itatk = 5)
-	lthcap = wearable(name = "Leather Cap", itdef = 1, kind = 1)
-	cotsht = wearable(name = "Cotton Shirt", itdef = 5, kind = 2)
-	cotleg = wearable(name = "Cotton Pants", itdef = 5, kind = 3)
-	lthbot = wearable(name = "Leather Boots", itdef = 3, kind = 4)
+	wdswd = Wearable(name = "Wooden Sword", itatk = 5)
+	lthcap = Wearable(name = "Leather Cap", itdef = 1, kind = 1)
+	cotsht = Wearable(name = "Cotton Shirt", itdef = 5, kind = 2)
+	cotleg = Wearable(name = "Cotton Pants", itdef = 5, kind = 3)
+	lthbot = Wearable(name = "Leather Boots", itdef = 3, kind = 4)
 	addToBag(wdswd)
 	addToBag(lthcap)
 	addToBag(cotsht)
