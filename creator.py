@@ -1,4 +1,4 @@
-class person:
+class Person:
 # Character class. Everything related to the player, or player
 # controlled characters, goes in here. The idea is that, eventually,
 # you'll be able to control more than one character in battle
@@ -27,7 +27,7 @@ class person:
 
 
 
-class item:
+class Item:
 # Item class. Everything a consumable item can do is defined here,
 # so that different items with different sets of effects can be made.
 # That is, an item that can restore mp, but in turn makes your healing
@@ -56,7 +56,7 @@ class item:
 		
 
 
-class wearable:
+class Wearable:
 # This class creates all wearable items and defines all the effects
 # it has on its user.
 	def __init__(self, **itattr):
@@ -81,7 +81,7 @@ class wearable:
 		self.healpwrdiff = itattr.get('healpwrdiff', 1)
 
 
-class enemy:
+class Enemy:
 # Enemy class. Everything related to enemies (and thus, PVP events)
 # goes here. Multiple enemies can be in one single fight.
 	def __init__(self, **enattr):
@@ -92,4 +92,5 @@ class enemy:
 		self.lvl = enattr.get("lvl", 0)
 		self.enatkpwr = enattr.get('enatkpwr', 1.0)
 		self.endefpwr = entattr.get('endefpwr', 1.0)
-				
+	def __repr__(self):
+		return f"Enemy(name={self.name}, kind={self.kind}, hp={self.hp}, element={self.element}, lvl={self.lvl})"
